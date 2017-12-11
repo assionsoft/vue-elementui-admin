@@ -6,6 +6,8 @@ import Login from '@/views/Login'
 import NotFound from '@/views/404'
 import Test1 from '@/views/test/Test1'
 import Test2 from '@/views/test/Test2'
+import Form from '@/views/test/Form'
+import Table from '@/views/test/Table'
 
 Vue.use(Router)
 
@@ -18,7 +20,7 @@ export default new Router({
     	children:[
     	{
     		path:'/login',
-            name:'Login',
+            name:'登录',
             component:Login
     	},
     	{
@@ -30,18 +32,28 @@ export default new Router({
     },
     {
       path: '/',
-      name: '',
+      name: '系统',
       component: Main,
       children:[
         {
         	path:'test1',
-        	name:'Test1',
+        	name:'测试1',
         	component:Test1
         },
         {
         	path:'test2',
-        	name:'Test2',
+        	name:'测试2',
         	component:Test2
+        },
+        {
+            path:'Form',
+            name:'表单',
+            component:Form
+        },
+        {
+            path:'Table',
+            name:'表格',
+            component:Table
         }
       ]
     },

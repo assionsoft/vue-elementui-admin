@@ -1,35 +1,58 @@
 <template>
-  <el-row  style="height:1200px;border:1px solid #eee">
-    <el-header>
-  	  <el-row>
-        <el-col :span="8" :class="collapsed?'logo-mini':'logo-long'">
+<el-container>
+  	<el-header class="header">
+      <el-col :span="12">
+        <el-col :span="6" :class="collapsed?'logo-mini':'logo-long'">
           {{collapsed?logoMiniName:logoLongName}}
         </el-col>
-        <el-col :span="8">
-          <el-button type="primary"  style="margin-left:10px;" @click="collapse"><i :class="collapsed?'el-icon-d-arrow-right':'el-icon-d-arrow-left'"></i></el-button>
+        <el-col :span="6">
+         
+          <el-button style="margin-left:10px;" @click="collapse"><i :class="collapsed?'el-icon-d-arrow-right':'el-icon-d-arrow-left'"></i></el-button>
         </el-col>
-        <el-col :span="8">我的</el-col>
-  	  </el-row>
-    </el-header>
-    <el-row style="height:1000px;">
-      <el-col :span="12" :class="collapsed?'aside-mini':'aside-long'"><LeftMenu :collapsed="collapsed"></LeftMenu></el-col>
-      <el-col :span="12"><router-view></router-view></el-col>
-    </el-row>
-  </el-row>
+      </el-col>
+      
+      <el-col :span="12">
+        <el-col :span="22">&nbsp;</el-col>
+        <el-col :span="2" style="text-align:center;"><UserInfo></UserInfo></el-col>
+      </el-col>
+  	</el-header>
+
+    <el-container style="background-color:#f0f2f5;">
+     <el-aside :class="collapsed?'aside-mini':'aside-long'" width="collapsed?'65px':'220px'">
+      <LeftMenu :collapsed="collapsed"></LeftMenu>
+     </el-aside>
+     <el-main style="background-color:#f0f2f5;padding:0;">
+        <el-col :span="24" style="background-color:#fff;height:70px;margin-left:0px;padding:0px;">
+            
+            <el-breadcrumb separator="/" style="margin-left:20px;line-height:40px;">
+              <el-breadcrumb-item v-for="item in $route.matched" :key="item.path">
+                {{ item.name }}
+              </el-breadcrumb-item>
+           </el-breadcrumb>
+           <strong style="width:100px;color:#475669;margin-left:25px;line-height:30px;">{{$route.name}}</strong>
+        </el-col>
+        <el-col :span="24">
+          <router-view style="background-color:#fff;margin-left:10px;margin-top:20px;margin-right:10px;"></router-view>
+        </el-col>
+     </el-main>
+    </el-container>
+</el-container>
 </template>
 
 <script>
 import LeftMenu from '@/views/components/LeftMenu'
+import UserInfo from '@/views/components/UserInfo'
 	export default{
 		name:'Main',
 		components:{
-			LeftMenu
+			LeftMenu,
+      UserInfo
 		},
 		data(){
 			return{
-				logoLongName:'Chinayie',
-				logoMiniName:'C',
-			    collapsed:false
+				logoLongName:'国烨电商ERP',
+				logoMiniName:'商',
+			  collapsed:false
 			}
 		},
 		methods: {
@@ -42,26 +65,38 @@ import LeftMenu from '@/views/components/LeftMenu'
 </script>
 
 <style>
-  .el-header {
-    background-color: #44a0f5;
+  .header {
+    padding-left: 0px;
+    background-color: #ffffff;
     color: #333;
     line-height: 60px;
+    height:60px;
+    border-bottom: 1px solid #f3f4f5;
+    color:#fff;
   }
   
-  .el-aside {
-    color: #333;
-  }
+
   .logo-long{
-  	color:#ffffff;font-size:25px;width:200px;border-right:1px solid #77b8de;
+  	color:#fff;
+    font-size:25px;
+    width:220px;
+    border-right:1px solid #072140;
+    text-align: center;
+    background-color: #072140;
   }
   .logo-mini{
-  	color:#ffffff;font-size:25px;width:45px;border-right:1px solid #77b8de;
+  	color:#fff;
+    font-size:25px;
+    width:65px;
+    border-right:1px solid #072140;
+    text-align: center;
+    background-color: #072140;
   }
   .aside-long
   {
-  	background-color:rgb(238,241,246);width: 220px;
+  	background-color:#031529;width: 220px;height: 1000px;border-right: 1px solid #031529;overflow: visible;
   }
   .aside-mini{
-  	background-color:rgb(238,241,246);width: 60px;
+  	background-color:#031529;width: 65px;height: 1000px;border-right: 1px solid #031529;overflow: visible;
   }
 </style>
