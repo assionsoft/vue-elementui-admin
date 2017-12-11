@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ecback
 
 > A Vue.js project
@@ -28,3 +29,9 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+=======
+# vue-elementui-admin
+基于vue+elementui做的后台框架
+
+npm install vuex
+>>>>>>> de76e61d61a3cf44f2a5206a3bc2076c6c8a7e82
