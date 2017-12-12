@@ -5,7 +5,7 @@
         <el-col :span="6" :class="collapsed?'logo-mini':'logo-long'">
           {{collapsed?logoMiniName:logoLongName}}
         </el-col>
-        <el-col :span="6" style="border-bottom: 2px solid #f3f4f5;background:url(http://pic.chinayie.com/cdn/leftbackf.png) repeat-y;">
+        <el-col :span="6">
          
           <el-button style="margin-left:10px;" @click="collapse"><i :class="collapsed?'el-icon-d-arrow-right':'el-icon-d-arrow-left'"></i></el-button>
         </el-col>
@@ -17,13 +17,14 @@
       </el-col>
   	</el-header>
 
-    <el-container style="background-color:#031529;">
+    <el-container>
      <el-aside :class="collapsed?'aside-mini':'aside-long'" width="collapsed?'65px':'220px'">
       <LeftMenu :collapsed="collapsed"></LeftMenu>
      </el-aside>
-     <el-main style="padding:0;background:url(http://pic.chinayie.com/cdn/leftback.png) repeat-y;background-color:#f0f2f5;">
-        <el-col :span="24" style="background-color:#fff;height:70px;margin-left:0px;">
-          <el-col :span="24" style="background:url(http://pic.chinayie.com/cdn/leftbackf.png) repeat-y;">
+     <el-main style="padding:0; background: #fff;" :class="collapsed?'main-mini':''">
+
+        <el-col :span="24" style="background-color:#fff;height:71px;margin-left:0px;border-top: 1px solid #f3f4f5;">
+          <el-col :span="24" >
             <el-breadcrumb separator="/" style="margin-left:20px;line-height:40px;">
               <el-breadcrumb-item v-for="item in $route.matched" :key="item.path">
                 {{ item.name }}
@@ -33,10 +34,7 @@
           </el-col>
         </el-col>
         <el-col :span="24">
-
-           <router-view style="background-color:#fff;margin-left:10px;margin-top:10px;margin-right:10px;padding-top:10px;padding-bottom:10px;"></router-view>
-
-               
+           <router-view style="background-color:#fff;margin-left:10px;margin-top:10px;margin-right:10px;padding-top:10px;padding-bottom:10px;"></router-view>     
         </el-col>
         
      </el-main>
@@ -69,15 +67,23 @@ import UserInfo from '@/views/components/UserInfo'
 	}
 </script>
 
-<style>
+<style scoped>
   .header {
     padding-left: 0px;
     background-color: #ffffff;
     color: #333;
     line-height: 60px;
     height:60px;
-    border-bottom: 2px solid #f3f4f5;
     color:#fff;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    box-shadow: 1px 1px 5px #ccc;
+    -webkit-box-shadow: 1px 1px 5px #ccc;
+    -moz-box-shadow: 1px 1px 5px #ccc;
+    -o-box-shadow: 1px 1px 5px #ccc;
   }
   
 
@@ -88,6 +94,9 @@ import UserInfo from '@/views/components/UserInfo'
     border-right:1px solid #072140;
     text-align: center;
     background-color: #072140;
+    -webkit-box-shadow: 1px 1px 7px #333;
+    -moz-box-shadow: 1px 1px 7px #333;
+    -o-box-shadow: 1px 1px 7px #333;
   }
   .logo-mini{
   	color:#fff;
@@ -97,11 +106,48 @@ import UserInfo from '@/views/components/UserInfo'
     text-align: center;
     background-color: #072140;
   }
-  .aside-long
-  {
-  	background-color:#031529;width: 260px;height: 1000px;border-right: 1px solid #031529;
+  .aside-long{
+  	background-color:#031529;
+    width: 260px;
+    border-right: 1px solid #031529;
+    position: fixed;
+    top: 59px;
+    left: 0;
+    height: 100%;
+    z-index: 6;
+    -webkit-box-shadow: 1px 1px 7px #333;
+    -moz-box-shadow: 1px 1px 7px #333;
+    -o-box-shadow: 1px 1px 7px #333;
   }
   .aside-mini{
-  	background-color:#031529;width: 65px;height: 1000px;border-right: 1px solid #031529;overflow: visible;
+  	background-color:#031529;
+    width: 65px;
+    position: fixed;
+    left: 0;
+    top: 59px;
+    z-index: 6;
+    height: 100%;
+  }
+  .el-main {
+    position: absolute;
+    top: 60px;
+    left: 260px;
+  }
+  .main-mini {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+  }
+
+  .el-menu--collapse .el-submenu .el-menu {
+    display: block;
+  }
+  .el-aside, .el-main {
+    overflow: inherit;
+  }
+  .el-menu-item {
+    -webkit-transition: 0s !important;
+    transition: 0s !important;
+    background: #f00;
   }
 </style>

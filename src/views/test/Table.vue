@@ -14,7 +14,8 @@
 			</el-form-item>
 		</el-form>
     </el-col>
-	<el-table :data="users" style="width: 100%;">
+	<el-col :span="24">
+    <el-table :data="users" style="width: 100%;">
 			<el-table-column type="selection" width="55">
 			</el-table-column>
 			<el-table-column type="index" width="60">
@@ -36,6 +37,7 @@
 				</template>
 			</el-table-column>
 	</el-table>
+	</el-col>
 	<!--工具条-->
 		<el-col :span="24" class="toolbar">
 			<el-button type="danger" >批量删除</el-button>

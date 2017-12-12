@@ -8,6 +8,8 @@ import Test1 from '@/views/test/Test1'
 import Test2 from '@/views/test/Test2'
 import Form from '@/views/test/Form'
 import Table from '@/views/test/Table'
+import Dashboard from '@/views/test/Dashboard'
+import VuexTest from '@/views/test/VuexTest'
 
 Vue.use(Router)
 
@@ -36,6 +38,15 @@ export default new Router({
       component: Main,
       children:[
         {
+            path:'/',
+            redirect:{path:'/dashboard'}
+        },
+        {
+            path:'vuextest',
+            name:'Vuex测试',
+            component:VuexTest
+        },
+        {
         	path:'test1',
         	name:'测试1',
         	component:Test1
@@ -54,6 +65,12 @@ export default new Router({
             path:'Table',
             name:'表格',
             component:Table
+        }
+        ,
+        {
+            path:'dashboard',
+            name:'dashboard',
+            component:Dashboard
         }
       ]
     },

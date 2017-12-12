@@ -10,7 +10,12 @@
       text-color="#b7bcc2"
       active-text-color="#fff"
       >
-      <el-submenu index="1" background-color="#fff">
+      <el-menu-item index="dashboard">
+        <i class="el-icon-date"></i>
+        <span slot="title">Dashboard</span>
+        </el-menu-item>
+       <el-submenu index="1" background-color="#fff">
+        
         <template slot="title">
           <i class="el-icon-location"></i>
           <span>组件</span>
@@ -19,8 +24,7 @@
 
           <el-menu-item index="form" >表单</el-menu-item>
           <el-menu-item index="table" >表格</el-menu-item>
-
-
+          <el-menu-item index="vuextest" >vuex测试</el-menu-item>
           <el-menu-item index="test1" >测试1</el-menu-item>
 
         <el-submenu index="1-4">
