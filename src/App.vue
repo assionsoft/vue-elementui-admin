@@ -27,6 +27,7 @@ body {
   top: 0px;
   bottom: 0px;
   width: 100%;
+  background-color: #f0f2f5;
 }
 
 .el-submenu [class^=fa] {

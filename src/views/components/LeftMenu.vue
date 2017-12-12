@@ -25,6 +25,11 @@
           <el-menu-item index="form" >表单</el-menu-item>
           <el-menu-item index="table" >表格</el-menu-item>
           <el-menu-item index="vuextest" >vuex测试</el-menu-item>
+          <el-menu-item index="slide" >跑马灯</el-menu-item>
+          <el-menu-item index="notify" >通知</el-menu-item>
+          <el-menu-item index="collapse" >折叠面板</el-menu-item>
+          <el-menu-item index="dialog" >对话框</el-menu-item>
+          <el-menu-item index="Upload" >文件上传</el-menu-item>
           <el-menu-item index="test1" >测试1</el-menu-item>
 
         <el-submenu index="1-4">

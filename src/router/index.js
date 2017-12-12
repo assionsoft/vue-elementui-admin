@@ -10,6 +10,11 @@ import Form from '@/views/test/Form'
 import Table from '@/views/test/Table'
 import Dashboard from '@/views/test/Dashboard'
 import VuexTest from '@/views/test/VuexTest'
+import Slide from '@/views/test/Slide'
+import Notify from '@/views/test/Notify'
+import Collapse from '@/views/test/Collapse'
+import Dialog from '@/views/test/Dialog'
+import Upload from '@/views/test/Upload'
 
 Vue.use(Router)
 
@@ -45,6 +50,31 @@ export default new Router({
             path:'vuextest',
             name:'Vuex测试',
             component:VuexTest
+        },
+        {
+            path:'slide',
+            name:'跑马灯',
+            component:Slide
+        },
+        {
+            path:'dialog',
+            name:'对话框',
+            component:Dialog
+        },
+        {
+            path:'collapse',
+            name:'折叠面板',
+            component:Collapse
+        },
+        {
+            path:'Notify',
+            name:'通知',
+            component:Notify
+        },
+        {
+            path:'Upload',
+            name:'文件上传',
+            component:Upload
         },
         {
         	path:'test1',

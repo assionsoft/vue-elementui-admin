@@ -12,17 +12,17 @@
       </el-col>
       
       <el-col :span="12">
-        <el-col :span="22">&nbsp;</el-col>
-        <el-col :span="2" style="text-align:center;"><UserInfo></UserInfo></el-col>
+        <el-col :span="24" style="text-align:right;"><UserInfo></UserInfo></el-col>
       </el-col>
   	</el-header>
 
     <el-container>
+    <transition name="el-zoom-in-center">
      <el-aside :class="collapsed?'aside-mini':'aside-long'" width="collapsed?'65px':'220px'">
       <LeftMenu :collapsed="collapsed"></LeftMenu>
      </el-aside>
+     </transition>
      <el-main :class="collapsed?'main-mini':''">
-
         <el-col :span="24" style="background-color:#fff;height:71px;;">
           <el-col :span="24" >
             <el-breadcrumb separator="/" style="margin-left:20px;line-height:40px;">
@@ -33,8 +33,8 @@
            <strong style="width:100px;color:#475669;margin-left:25px;line-height:31px;">{{$route.name}}</strong>
           </el-col>
         </el-col>
-        <el-col :span="24">
-           <router-view style="background-color:#fff;margin: 20px; padding: 10px;"></router-view>     
+        <el-col :span="24" style="background-color:#fff; border: 20px solid #f0f2f5; padding: 20px;">
+           <router-view></router-view>     
         </el-col>
         
      </el-main>
@@ -68,6 +68,7 @@ import UserInfo from '@/views/components/UserInfo'
 </script>
 
 <style scoped>
+  
   .header {
     padding-left: 0px;
     background-color: #ffffff;
@@ -129,21 +130,16 @@ import UserInfo from '@/views/components/UserInfo'
     height: 100%;
   }
   .el-main {
-    position: absolute;
-    width: 100%;
-    top: 60px;
+    margin-top: 60px;
     padding: 0 0 0 260px;
     background-color: #f0f2f5;
-    min-height: calc(100% - 60px);
-    z-index: 1;
+    width: 100%;
   }
   .main-mini {
-    position: absolute;
-    top: 60px;
+    margin-top: 60px;
     padding-left: 60px;
 
   }
-
   .el-menu--collapse .el-submenu .el-menu {
     display: block;
   }
