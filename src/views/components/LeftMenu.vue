@@ -22,7 +22,7 @@
         </template>
 
 
-          <el-menu-item index="form" >表单</el-menu-item>
+          <el-menu-item index="form">表单</el-menu-item>
           <el-menu-item index="table" >表格</el-menu-item>
           <el-menu-item index="vuextest" >vuex测试</el-menu-item>
           <el-menu-item index="slide" >跑马灯</el-menu-item>
@@ -69,3 +69,11 @@
     }
   }
 </script>
+<style>
+  ul.el-menu > li > ul > li {
+    background: rgb(1,12,23) !important;
+  }
+  ul.el-menu > li > ul > li.is-active {
+    background:rgb(62,144,254) !important;
+  }
+</style>

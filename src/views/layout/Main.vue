@@ -1,5 +1,5 @@
 <template>
-<el-container style="background: #f00;">
+<el-container>
   	<el-header class="header">
       <el-col :span="12">
         <el-col :span="6" :class="collapsed?'logo-mini':'logo-long'">
