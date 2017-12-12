@@ -1,5 +1,5 @@
 <template>
-<el-container>
+<el-container style="background: #f00;">
   	<el-header class="header">
       <el-col :span="12">
         <el-col :span="6" :class="collapsed?'logo-mini':'logo-long'">
@@ -21,9 +21,9 @@
      <el-aside :class="collapsed?'aside-mini':'aside-long'" width="collapsed?'65px':'220px'">
       <LeftMenu :collapsed="collapsed"></LeftMenu>
      </el-aside>
-     <el-main style="padding:0; background: #fff;" :class="collapsed?'main-mini':''">
+     <el-main :class="collapsed?'main-mini':''">
 
-        <el-col :span="24" style="background-color:#fff;height:71px;margin-left:0px;border-top: 1px solid #f3f4f5;">
+        <el-col :span="24" style="background-color:#fff;height:71px;;">
           <el-col :span="24" >
             <el-breadcrumb separator="/" style="margin-left:20px;line-height:40px;">
               <el-breadcrumb-item v-for="item in $route.matched" :key="item.path">
@@ -34,7 +34,7 @@
           </el-col>
         </el-col>
         <el-col :span="24">
-           <router-view style="background-color:#fff;margin-left:10px;margin-top:10px;margin-right:10px;padding-top:10px;padding-bottom:10px;"></router-view>     
+           <router-view style="background-color:#fff;margin: 20px; padding: 10px;"></router-view>     
         </el-col>
         
      </el-main>
@@ -130,13 +130,18 @@ import UserInfo from '@/views/components/UserInfo'
   }
   .el-main {
     position: absolute;
+    width: 100%;
     top: 60px;
-    left: 260px;
+    padding: 0 0 0 260px;
+    background-color: #f0f2f5;
+    min-height: calc(100% - 60px);
+    z-index: 1;
   }
   .main-mini {
     position: absolute;
     top: 60px;
-    left: 60px;
+    padding-left: 60px;
+
   }
 
   .el-menu--collapse .el-submenu .el-menu {
