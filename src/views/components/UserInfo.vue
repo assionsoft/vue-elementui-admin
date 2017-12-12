@@ -1,7 +1,7 @@
 <template>
   <el-dropdown @command="handleCommand">
   <span class="el-dropdown-link">
-    个人中心<i class="el-icon-arrow-down el-icon--right"></i>
+    杨春来<i class="el-icon-arrow-down el-icon--right"></i>
   </span>
   <el-dropdown-menu slot="dropdown">
     <el-dropdown-item command="a">修改密码</el-dropdown-item>

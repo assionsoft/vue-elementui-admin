@@ -5,7 +5,7 @@
         <el-col :span="6" :class="collapsed?'logo-mini':'logo-long'">
           {{collapsed?logoMiniName:logoLongName}}
         </el-col>
-        <el-col :span="6">
+        <el-col :span="6" style="border-bottom: 2px solid #f3f4f5;background:url(http://pic.chinayie.com/cdn/leftbackf.png) repeat-y;">
          
           <el-button style="margin-left:10px;" @click="collapse"><i :class="collapsed?'el-icon-d-arrow-right':'el-icon-d-arrow-left'"></i></el-button>
         </el-col>
@@ -17,23 +17,28 @@
       </el-col>
   	</el-header>
 
-    <el-container style="background-color:#f0f2f5;">
+    <el-container style="background-color:#031529;">
      <el-aside :class="collapsed?'aside-mini':'aside-long'" width="collapsed?'65px':'220px'">
       <LeftMenu :collapsed="collapsed"></LeftMenu>
      </el-aside>
-     <el-main style="background-color:#f0f2f5;padding:0;">
-        <el-col :span="24" style="background-color:#fff;height:70px;margin-left:0px;padding:0px;">
-            
+     <el-main style="padding:0;background:url(http://pic.chinayie.com/cdn/leftback.png) repeat-y;background-color:#f0f2f5;">
+        <el-col :span="24" style="background-color:#fff;height:70px;margin-left:0px;">
+          <el-col :span="24" style="background:url(http://pic.chinayie.com/cdn/leftbackf.png) repeat-y;">
             <el-breadcrumb separator="/" style="margin-left:20px;line-height:40px;">
               <el-breadcrumb-item v-for="item in $route.matched" :key="item.path">
                 {{ item.name }}
               </el-breadcrumb-item>
            </el-breadcrumb>
-           <strong style="width:100px;color:#475669;margin-left:25px;line-height:30px;">{{$route.name}}</strong>
+           <strong style="width:100px;color:#475669;margin-left:25px;line-height:31px;">{{$route.name}}</strong>
+          </el-col>
         </el-col>
         <el-col :span="24">
-          <router-view style="background-color:#fff;margin-left:10px;margin-top:20px;margin-right:10px;"></router-view>
+
+           <router-view style="background-color:#fff;margin-left:10px;margin-top:10px;margin-right:10px;padding-top:10px;padding-bottom:10px;"></router-view>
+
+               
         </el-col>
+        
      </el-main>
     </el-container>
 </el-container>
@@ -71,7 +76,7 @@ import UserInfo from '@/views/components/UserInfo'
     color: #333;
     line-height: 60px;
     height:60px;
-    border-bottom: 1px solid #f3f4f5;
+    border-bottom: 2px solid #f3f4f5;
     color:#fff;
   }
   
@@ -79,7 +84,7 @@ import UserInfo from '@/views/components/UserInfo'
   .logo-long{
   	color:#fff;
     font-size:25px;
-    width:220px;
+    width:260px;
     border-right:1px solid #072140;
     text-align: center;
     background-color: #072140;
@@ -94,7 +99,7 @@ import UserInfo from '@/views/components/UserInfo'
   }
   .aside-long
   {
-  	background-color:#031529;width: 220px;height: 1000px;border-right: 1px solid #031529;overflow: visible;
+  	background-color:#031529;width: 260px;height: 1000px;border-right: 1px solid #031529;
   }
   .aside-mini{
   	background-color:#031529;width: 65px;height: 1000px;border-right: 1px solid #031529;overflow: visible;
